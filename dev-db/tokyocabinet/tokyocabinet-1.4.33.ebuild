@@ -9,13 +9,12 @@ SRC_URI="http://1978th.net/tokyocabinet/${P}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="bzip2 lzma lzo ruby threads zlib"
+IUSE="bzip2 lzma lzo threads zlib"
 
 DEPEND="bzip2? ( app-arch/bzip2 )
 	lzma? ( app-arch/lzma )
 	lzo? ( dev-libs/lzo )
-	zlib? ( sys-libs/zlib )
-	ruby? ( dev-ruby/tokyocabinet-ruby )"
+	zlib? ( sys-libs/zlib )"
 RDEPEND="${DEPEND}"
 
 src_compile() {
