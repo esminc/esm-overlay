@@ -15,8 +15,12 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
-RDEPEND=""
+RDEPEND="
+	x11-libs/gtk+
+	x11-libs/libXinerama
+	x11-libs/libXScrnSaver
+"
+DEPEND="${RDEPEND}"
 
 S=${WORKDIR}
 
