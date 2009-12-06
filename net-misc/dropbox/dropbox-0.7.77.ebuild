@@ -5,8 +5,8 @@
 EAPI="2"
 inherit eutils
 
-DESCRIPTION="Wakoopa is a social network that helps people discover the best software, games and web apps on the market."
-HOMEPAGE="http://www.getdropbox.com/"
+DESCRIPTION="Dropbox allows you to sync your files online and across your computers automatically."
+HOMEPAGE="https://www.dropbox.com/"
 SRC_URI="x86? ( http://dl-web.getdropbox.com/u/17/dropbox-lnx.x86-${PV}.tar.gz )
 	amd64? ( http://dl-web.getdropbox.com/u/17/dropbox-lnx.x86_64-${PV}.tar.gz )"
 
@@ -20,7 +20,7 @@ RDEPEND=""
 
 S=${WORKDIR}
 
-QA_PRESTRIPPED="opt/wakoopa/wakoopa"
+RESTRICT="mirror strip"
 
 src_install() {
 	declare DROPBOX_HOME=/opt/dropbox
