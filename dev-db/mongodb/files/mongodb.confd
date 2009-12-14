@@ -1,0 +1,11 @@
+# Mongodb essentials
+MONGODB_EXEC="/usr/bin/mongod"
+MONGODB_DATA="/var/lib/mongodb"
+MONGODB_USER="mongodb"
+MONGODB_PID_FILE="/var/run/mongodb/mongodb.pid"
+
+MONGODB_IP="127.0.0.1"
+MONGODB_PORT="27017"
+
+# Set extra options here, such as disabling the admin web server
+MONGODB_OPTIONS=""
