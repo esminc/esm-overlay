@@ -1,14 +1,16 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI="2"
 
 inherit eutils
 
+MY_P=${PN}-src-r${PV}
+
 DESCRIPTION="A high-performance, open source, schema-free document-oriented database"
 HOMEPAGE="http://www.mongodb.org"
-SRC_URI="http://github.com/mongodb/mongo/tarball/r${PV} -> ${P}.tar.gz"
+SRC_URI="http://downloads.mongodb.org/src/${MY_P}.tar.gz"
 
 LICENSE="AGPL-3"
 SLOT="0"
@@ -20,10 +22,9 @@ RDEPEND="dev-lang/spidermonkey
 	dev-libs/libpcre"
 
 DEPEND="${RDEPEND}
-	>=dev-util/scons-1.2.0-r1
-	test? ( dev-libs/unittest )"
+	>=dev-util/scons-1.2.0-r1"
 
-S=${WORKDIR}/${PN}-mongo-2add01f
+S=${WORKDIR}/${MY_P}
 
 pkg_setup() {
 	enewgroup mongodb
@@ -39,7 +40,7 @@ src_compile() {
 }
 
 src_install() {
-	scons ${MAKEOPTS} install --prefix="${D}"/usr || die "Install failed"
+	scons ${MAKEOPTS} install --prefix="${D}"/usr --nostrip || die "Install failed"
 
 	for x in /var/{lib,log,run}/${PN}; do
 		dodir "${x}" || die "Install failed"
@@ -54,4 +55,20 @@ src_install() {
 
 src_test() {
 	scons ${MAKEOPTS} smoke test || die "Tests failed"
+}
+
+pkg_preinst() {
+	has_version '<dev-db/mongodb-1.2'
+	PREVIOUS_LESS_THAN_1_2=$?
+}
+
+pkg_postinst() {
+	if [[ ${PREVIOUS_LESS_THAN_1_2} -eq 0 ]]; then
+		ewarn "You need to upgrade your database before proceeding! Steps:"
+		ewarn "   /etc/init.d/mongodb stop"
+		ewarn "   mongod --upgrade"
+		ewarn "   /etc/init.d/mongodb start"
+		ewarn "For more info about upgrading, please visit:"
+		ewarn "http://www.mongodb.org/display/DOCS/1.2.0+Release+Notes"
+	fi;
 }
