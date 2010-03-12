@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE repositories SYSTEM "/dtd/repositories.dtd">
+<repositories xmlns="" version="1.0">
+	<repo>
+		<name>esm</name>
+		<source type="git">git://github.com/esminc/portage-overlay.git</source>
+		<feed>http://github.com/esminc/portage-overlay/commits/master.atom</feed>
+	</repo>
+</repositories>
