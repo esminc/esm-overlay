@@ -20,6 +20,7 @@ DEPEND=">=virtual/jre-1.5
 	vim? ( || ( app-editors/vim app-editors/gvim ) )"
 RDEPEND="${DEPEND}"
 
+ENVFILE="90${PN}"
 SITEFILE="90${PN}-gentoo.el"
 
 RESTRICT="mirror"
@@ -40,13 +41,14 @@ src_install() {
 
 	insinto ${RSENSE_HOME}
 	doins -r bin lib stubs
+
 	fperms +x ${RSENSE_HOME}/bin/rsense
 	make_wrapper rsense bin/rsense ${RSENSE_HOME}
 
 	newbin etc/config.rb rsense-config
 
-	echo "RSENSE_HOME=${RSENSE_HOME}" > "${T}/90${PN}"
-	doenvd "${T}/90${PN}"
+	echo "RSENSE_HOME=${RSENSE_HOME}" > "${T}/${ENVFILE}"
+	doenvd "${T}/${ENVFILE}"
 
 	dodoc README.txt doc/*.txt
 
