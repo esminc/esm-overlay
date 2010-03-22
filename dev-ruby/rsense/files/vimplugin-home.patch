@@ -1,0 +1,13 @@
+diff --git a/etc/rsense.vim b/etc/rsense.vim
+index d42e69d..5ee1eb6 100644
+--- a/etc/rsense.vim
++++ b/etc/rsense.vim
+@@ -4,7 +4,7 @@ endif
+ let g:loaded_rsense = 1
+ 
+ if !exists('g:rsenseHome')
+-    let g:rsenseHome = "~/src/rsense"
++    let g:rsenseHome = $RSENSE_HOME
+ endif
+ 
+ if !exists('g:rsenseUseOmniFunc')
