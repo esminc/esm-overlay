@@ -25,11 +25,6 @@ SITEFILE="90${PN}-gentoo.el"
 
 RESTRICT="mirror"
 
-src_prepare() {
-	epatch "${FILESDIR}/config-home.patch"
-	epatch "${FILESDIR}/vimplugin-home.patch"
-}
-
 src_compile() {
 	if use emacs; then
 		elisp-compile etc/*.el
