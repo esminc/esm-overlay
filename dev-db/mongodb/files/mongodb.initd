@@ -1,0 +1,45 @@
+#!/sbin/runscript
+# Copyright 1999-2009 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /var/cvsroot/gentoo-x86/dev-db/mongodb/files/mongodb.initd,v 1.2 2010/05/21 06:39:57 lu_zero Exp $
+
+depend() {
+	need net
+}
+
+start() {
+	ebegin "Starting ${SVCNAME}"
+	if [ -z "$MONGODB_PID_FILE" ] ; then
+		ewarn "MONGODB_PID_FILE must be set"
+		return -1
+    	fi
+	if [ -z "$MONGODB_USER" ] ; then
+	        ewarn "ERROR: MONGODB_USER must be set"
+		return -1
+	fi
+
+	args=""
+	if [ -n "$MONGODB_DATA" ] ; then
+		args="$args --dbpath $MONGODB_DATA"
+	fi
+	if [ -n "$MONGODB_PORT" ] ; then
+		args="$args --port $MONGODB_PORT"
+	fi
+	if [ -n "$MONGODB_IP" ] ; then
+		args="$args --bind_ip $MONGODB_IP"
+	fi
+	if [ -n "$MONGODB_OPTIONS" ] ; then
+		args="$args $MONGODB_OPTIONS"
+	fi
+
+	start-stop-daemon --background --start --user ${MONGODB_USER} --pidfile \
+		"${MONGODB_PID_FILE}" --make-pidfile --exec ${MONGODB_EXEC} \
+		 -- ${args} run
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping ${SVCNAME}"
+	start-stop-daemon --stop --exec ${MONGODB_EXEC} --pidfile ${MONGODB_PID_FILE}
+	eend $? "Failed to stop ${SVCNAME}"
+}
