@@ -1,0 +1,10 @@
+diff -ur a/sub-projects/rzscontrol/Makefile b/sub-projects/rzscontrol/Makefile
+--- a/sub-projects/rzscontrol/Makefile	2009-08-18 20:10:04.000000000 -0400
++++ b/sub-projects/rzscontrol/Makefile	2010-01-01 07:17:16.659296141 -0500
+@@ -1,5 +1,5 @@
+ all:
+-	@gcc -g -Wall -D_GNU_SOURCE rzscontrol.c -o rzscontrol -I ../include -I../..
++	$(CC) $(CFLAGS) -Wall -D_GNU_SOURCE rzscontrol.c -o rzscontrol -I ../include -I../.. $(LDFLAGS)
+ 
+ doc:
+ 	@xmllint --noout --valid man/rzscontrol.xml

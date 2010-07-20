@@ -1,0 +1,21 @@
+#!/sbin/runscript
+# Copyright 1999-2010 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+depend() {
+	use dev modules
+	before swap
+}
+
+start() {
+	ebegin "Allocating ${SVCNAME}"
+	${RZSCONTROL_EXEC} ${RZSCONTROL_DEVICE} ${RZSCONTROL_OPTIONS} --init
+	eend $?
+}
+
+stop() {
+	ebegin "Deallocating ${SVCNAME}"
+	${RZSCONTROL_EXEC} ${RZSCONTROL_DEVICE} --reset
+	eend $?
+}
