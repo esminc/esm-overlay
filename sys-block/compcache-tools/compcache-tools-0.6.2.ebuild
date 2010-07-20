@@ -4,7 +4,7 @@
 
 EAPI=2
 
-inherit eutils toolchain-funcs
+inherit eutils toolchain-funcs linux-info
 
 MY_P="${P/-tools/}"
 DESCRIPTION="Compressed in-memory swap device for Linux"
@@ -17,6 +17,8 @@ KEYWORDS="~amd64"
 IUSE=""
 
 S="${WORKDIR}/${MY_P}/sub-projects/rzscontrol"
+
+CONFIG_CHECK="RAMZSWAP"
 
 src_prepare() {
 	epatch "${FILESDIR}/${P}_gentoo.patch"
