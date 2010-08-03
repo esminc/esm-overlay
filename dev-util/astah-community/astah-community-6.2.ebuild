@@ -2,14 +2,16 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-S="${WORKDIR}/astah_community"
-SRC_URI="${PN}-6_1.zip"
+EAPI=3
+
+SRC_URI="${PN}-${PV//./_}.zip"
 DESCRIPTION="Lightweight UML Editor"
 HOMEPAGE="http://astah.change-vision.com/"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~x86 ~ppc ~amd64"
 IUSE=""
+S="${WORKDIR}/astah_community"
 
 DEPEND=">=app-arch/unzip-5.52-r2"
 RDEPEND=">=virtual/jre-1.4"
@@ -26,7 +28,7 @@ src_install() {
 
     dodoc *.txt *.html
     rm *.txt *.html astah
-    cp -dp * ${D}/opt/${PN}
+    cp -rdp * ${D}/opt/${PN}
     exeinto /opt/${PN}
 
     echo "#!/bin/sh" > astah
