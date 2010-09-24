@@ -16,11 +16,12 @@ SRC_URI="http://downloads.mongodb.org/src/${MY_P}.tar.gz"
 LICENSE="AGPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="v8"
 
-RDEPEND="dev-lang/spidermonkey[unicode]
-	dev-libs/boost
-	dev-libs/libpcre"
+RDEPEND="dev-libs/boost
+	dev-libs/libpcre
+	v8? ( dev-lang/v8 )
+	!v8? ( dev-lang/spidermonkey[unicode] )"
 
 DEPEND="${RDEPEND}
 	>=dev-util/scons-1.2.0-r1
@@ -29,6 +30,10 @@ DEPEND="${RDEPEND}
 
 # Must change this on every upgrade
 S="${WORKDIR}/${MY_P}"
+
+use_v8() {
+	use v8 && echo "--usev8"
+}
 
 pkg_setup() {
 	enewgroup mongodb
@@ -40,11 +45,11 @@ src_prepare() {
 }
 
 src_compile() {
-	scons ${MAKEOPTS} all || die "Compile failed"
+	scons ${MAKEOPTS} all $(use_v8) || die "Compile failed"
 }
 
 src_install() {
-	scons ${MAKEOPTS} --nostrip install --prefix="${D}"/usr || die "Install failed"
+	scons ${MAKEOPTS} --nostrip install --prefix="${D}"/usr $(use_v8) || die "Install failed"
 
 	for x in /var/{lib,log,run}/${PN}; do
 		dodir "${x}" || die "Install failed"
