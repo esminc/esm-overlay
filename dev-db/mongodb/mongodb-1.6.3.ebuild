@@ -41,7 +41,7 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}"/1.6.0-SConstruct.patch
+	epatch "${FILESDIR}/${PN}-${MY_PATCHVER}.0-fix-scons.patch"
 }
 
 src_compile() {
