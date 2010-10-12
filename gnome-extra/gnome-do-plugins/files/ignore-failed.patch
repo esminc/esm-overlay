@@ -1,0 +1,42 @@
+diff --git a/Makefile.am b/Makefile.am
+index 1c8c804..ea27317 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -21,7 +21,6 @@ SUBDIRS = \
+ 	Evolution \
+ 	Exaile \
+ 	File \
+-	Firefox \
+ 	Flickr \
+ 	GNOME-Dictionary \
+ 	GNOME-Screenshot \
+@@ -44,7 +43,6 @@ SUBDIRS = \
+ 	OpenSearch \
+ 	Opera \
+ 	Pastebin \
+-	Pidgin \
+ 	PingFM \
+ 	Putty \
+ 	Quote \
+diff --git a/configure.ac b/configure.ac
+index 7e73940..fe33992 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -274,8 +274,6 @@ Exaile/Makefile
+ Exaile/Resources/Exaile.addin.xml
+ File/Makefile
+ File/Resources/File.addin.xml
+-Firefox/Makefile
+-Firefox/Resources/Firefox.addin.xml
+ Flickr/Makefile
+ Flickr/Resources/Flickr.addin.xml
+ GNOME-Dictionary/Makefile
+@@ -320,8 +318,6 @@ Opera/Makefile
+ Opera/Resources/Opera.addin.xml
+ Pastebin/Makefile
+ Pastebin/Resources/Pastebin.addin.xml
+-Pidgin/Makefile
+-Pidgin/Resources/Pidgin.addin.xml
+ PingFM/Makefile
+ PingFM/Resources/PingFM.addin.xml
+ Putty/Makefile
