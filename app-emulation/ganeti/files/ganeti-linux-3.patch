@@ -1,0 +1,21 @@
+diff --git a/lib/netutils.py b/lib/netutils.py
+index 11d5150..fba97a1 100644
+--- a/lib/netutils.py
++++ b/lib/netutils.py
+@@ -32,7 +32,6 @@ import os
+ import re
+ import socket
+ import struct
+-import IN
+ import logging
+ 
+ from ganeti import constants
+@@ -92,7 +91,7 @@ def GetSocketCredentials(sock):
+   @return: The PID, UID and GID of the connected foreign process.
+ 
+   """
+-  peercred = sock.getsockopt(socket.SOL_SOCKET, IN.SO_PEERCRED,
++  peercred = sock.getsockopt(socket.SOL_SOCKET, 17,
+                              _STRUCT_UCRED_SIZE)
+   return struct.unpack(_STRUCT_UCRED, peercred)
+ 
