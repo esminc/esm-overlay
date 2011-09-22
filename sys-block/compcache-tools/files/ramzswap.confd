@@ -1,3 +1,0 @@
-RZSCONTROL_EXEC="/usr/bin/rzscontrol"
-RZSCONTROL_DEVICE="/dev/ramzswap0"
-RZSCONTROL_OPTIONS=""
