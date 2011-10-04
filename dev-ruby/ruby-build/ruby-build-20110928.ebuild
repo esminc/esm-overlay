@@ -6,7 +6,7 @@ EAPI=4
 
 DESCRIPTION="Compile and install Ruby"
 HOMEPAGE="https://github.com/sstephenson/ruby-build"
-SRC_URI="https://github.com/sstephenson/ruby-build/tarball/v20110928 -> ${P}.tar.gz"
+SRC_URI="https://github.com/sstephenson/ruby-build/tarball/v${PV} -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
