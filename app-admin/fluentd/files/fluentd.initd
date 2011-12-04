@@ -1,0 +1,50 @@
+#!/sbin/runscript
+# Copyright 2008-2011 Funtoo Technologies
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+extra_commands="reload flush"
+
+FLUENTD_EXEC=${FLUENTD_EXEC:-/usr/bin/fluentd}
+FLUENTD_PID=${FLUENTD_PID:-/var/run/fluent/fluentd.pid}
+FLUENTD_CONF=${FLUENTD_CONF:-/etc/fluent/fluent.conf}
+FLUENTD_LOG=${FLUENTD_LOG:-/var/log/fluent/fluentd.log}
+FLUENTD_USER=${FLUENTD_USER:-fluent}
+FLUENTD_GROUP=${FLUENTD_GROUP:-fluent}
+
+depend() {
+	use net
+}
+
+start() {
+	ebegin "Starting ${SVCNAME}"
+
+	start-stop-daemon --start \
+		--exec ${FLUENTD_EXEC} \
+		--user ${FLUENTD_USER}:${FLUENTD_GROUP} \
+		-- \
+		--daemon ${FLUENTD_PID} \
+		--config ${FLUENTD_CONF} \
+		--log ${FLUENTD_LOG} \
+		${FLUENTD_OPTS}
+
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping ${SVCNAME}"
+	start-stop-daemon --stop --pidfile ${FLUENTD_PID} --retry 60
+	eend $?
+}
+
+reload() {
+	ebegin "Reloading ${SVCNAME}"
+	start-stop-daemon --signal HUP --pidfile ${FLUENTD_PID}
+	eend $?
+}
+
+flush() {
+	ebegin "Flushing ${SVCNAME}"
+	start-stop-daemon --signal USR1 --pidfile ${FLUENTD_PID}
+	eend $?
+}
