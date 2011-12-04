@@ -33,7 +33,7 @@ start() {
 
 stop() {
 	ebegin "Stopping ${SVCNAME}"
-	start-stop-daemon --stop --pidfile ${FLUENTD_PID} --retry 60
+	start-stop-daemon --stop --pidfile ${FLUENTD_PID}
 	eend $?
 }
 
