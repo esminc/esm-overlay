@@ -1,8 +1,8 @@
 diff --git a/libexec/rbenv-init b/libexec/rbenv-init
-index a83cee4..e3f07c2 100755
+index ed440d1..885e664 100755
 --- a/libexec/rbenv-init
 +++ b/libexec/rbenv-init
-@@ -60,12 +60,6 @@ mkdir -p "${RBENV_ROOT}/"{shims,versions}
+@@ -69,12 +69,6 @@ mkdir -p "${RBENV_ROOT}/"{shims,versions}
  
  echo 'export PATH="'${RBENV_ROOT}'/shims:${PATH}"'
  
@@ -12,6 +12,6 @@ index a83cee4..e3f07c2 100755
 -  ;;
 -esac
 -
- echo 'rbenv rehash 2>/dev/null'
- 
- commands=(`rbenv commands --sh`)
+ if [ -z "$no_rehash" ]; then
+   echo 'rbenv rehash 2>/dev/null'
+ fi

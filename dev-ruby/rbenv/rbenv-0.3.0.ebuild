@@ -33,16 +33,17 @@ src_install() {
 
 	dosym /usr/libexec/rbenv /usr/bin/rbenv
 	dobin bin/ruby-local-exec
-
-	dobashcompletion completions/rbenv.bash ${PN}
-
-	if use zsh-completion ; then
-		insinto /usr/share/zsh/site-functions
-		newins completions/rbenv.zsh _rbenv
-	fi
-
 	dodoc LICENSE README.md
 
 	insinto /etc/profile.d
 	doins ${FILESDIR}/rbenv.sh
+
+	if use bash-completion; then
+		dobashcompletion completions/rbenv.bash ${PN}
+	fi
+
+	if use zsh-completion; then
+		insinto /usr/share/zsh/site-functions
+		newins completions/rbenv.zsh _rbenv || die
+	fi
 }
