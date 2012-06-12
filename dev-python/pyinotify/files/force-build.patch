@@ -1,0 +1,13 @@
+diff --git a/setup.py b/setup.py
+index 2c6e0f2..b05da2b 100755
+--- a/setup.py
++++ b/setup.py
+@@ -82,7 +82,7 @@ def should_compile_ext_mod():
+ 
+ 
+ ext_mod = []
+-if compile_ext_mod or should_compile_ext_mod():
++if compile_ext_mod:
+     # add -fpic if x86_64 arch
+     if platform in ["linux-x86_64"]:
+         os.environ["CFLAGS"] = "-fpic"
