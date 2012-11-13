@@ -20,7 +20,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="cluster"
 
 # < http://4store.org/trac/wiki/Dependencies
-DEPEND="media-libs/raptor:0
+DEPEND="media-libs/raptor
 		>=dev-libs/rasqal-0.9.18
 		dev-libs/libxml2
 		dev-libs/libpcre
