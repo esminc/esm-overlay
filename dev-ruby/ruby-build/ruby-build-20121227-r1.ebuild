@@ -27,7 +27,7 @@ src_install() {
 	doins -r share/ruby-build
 
 	if use rbenv ; then
-		exeinto /usr/libexec
+		exeinto /opt/rbenv/libexec
 		doexe bin/rbenv-install
 	fi
 
