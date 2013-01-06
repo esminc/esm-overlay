@@ -37,9 +37,9 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo "Add rbenv init to your shell to enable shims and autocompletion."
-	einfo
-	einfo "  $ echo 'eval \"\$(rbenv init -)\"' >> ~/.bash_profile"
-	einfo
-	einfo "Same as in previous step, use ~/.profile on Ubuntu, ~/.zshrc for Zsh."
+	elog "Add rbenv init to your shell to enable shims and autocompletion."
+	elog
+	elog "  $ echo 'eval \"\$(rbenv init -)\"' >> ~/.bash_profile"
+	elog
+	elog "Same as in previous step, use ~/.profile on Ubuntu, ~/.zshrc for Zsh."
 }
