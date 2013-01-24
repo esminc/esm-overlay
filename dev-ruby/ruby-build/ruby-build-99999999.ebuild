@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/sstephenson/ruby-build"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS=""
 IUSE="+rbenv"
 
 DEPEND=""
