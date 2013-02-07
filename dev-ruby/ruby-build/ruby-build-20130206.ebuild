@@ -6,7 +6,7 @@ EAPI=4
 
 DESCRIPTION="Compile and install Ruby"
 HOMEPAGE="https://github.com/sstephenson/ruby-build"
-SRC_URI="https://github.com/sstephenson/ruby-build/tarball/v${PV} -> ${P}.tar.gz"
+SRC_URI="https://github.com/sstephenson/ruby-build/archive/v${PV}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -14,11 +14,6 @@ KEYWORDS="~amd64"
 IUSE="+rbenv"
 
 DEPEND=""
-
-src_unpack() {
-	unpack ${A}
-	mv *-${PN}-* ${S}
-}
 
 src_install() {
 	dobin bin/ruby-build
