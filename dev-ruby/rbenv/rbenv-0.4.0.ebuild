@@ -6,7 +6,7 @@ EAPI=4
 
 DESCRIPTION="Simple Ruby Version Management"
 HOMEPAGE="https://github.com/sstephenson/rbenv"
-SRC_URI="https://github.com/sstephenson/rbenv/tarball/v${PV} -> ${P}.tar.gz"
+SRC_URI="https://github.com/sstephenson/rbenv/archive/v${PV}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -14,11 +14,6 @@ KEYWORDS="~amd64"
 IUSE="deprecated +ruby-build"
 
 DEPEND="ruby-build? ( dev-ruby/ruby-build[rbenv] )"
-
-src_unpack() {
-	unpack ${A}
-	mv *-${PN}-* ${S}
-}
 
 src_install() {
 	exeinto /opt/rbenv/libexec
