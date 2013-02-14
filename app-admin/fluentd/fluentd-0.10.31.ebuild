@@ -19,7 +19,7 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
 
-ruby_add_rdepend "=dev-ruby/cool-io-1.0*
+ruby_add_rdepend "=dev-ruby/coolio-1.1*
 	=dev-ruby/http_parser-rb-0.5*
 	>=dev-ruby/json-1.4.3
 	=dev-ruby/msgpack-0.4*
