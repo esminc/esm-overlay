@@ -23,7 +23,7 @@ ruby_add_rdepend "=dev-ruby/coolio-1.1*
 	=dev-ruby/http_parser-rb-0.5*
 	>=dev-ruby/json-1.4.3
 	=dev-ruby/msgpack-0.4*
-	=dev-ruby/yajl-ruby-1.0*"
+	=dev-ruby/yajl-ruby-1*"
 
 pkg_setup() {
 	enewgroup fluent
