@@ -4,7 +4,7 @@ EAPI=4
 
 DESCRIPTION="Vagrant is a tool for building and distributing working environments."
 HOMEPAGE="http://www.vagrantup.com/"
-SRC_URI="http://files.vagrantup.com/packages/87613ec9392d4660ffcb1d5755307136c06af08c/vagrant_x86_64.pkg.tar.xz"
+SRC_URI="http://files.vagrantup.com/packages/64e360814c3ad960d810456add977fd4c7d47ce6/vagrant_x86_64.pkg.tar.xz"
 
 LICENSE="MIT"
 SLOT="0"
