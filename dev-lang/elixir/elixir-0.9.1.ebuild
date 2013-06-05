@@ -10,7 +10,7 @@ KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND="dev-util/rebar"
-RDEPEND=">=dev-lang/erlang-15"
+RDEPEND=">=dev-lang/erlang-16"
 
 src_compile() {
 	emake compile || die "emake compile failed"
