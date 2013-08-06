@@ -1,8 +1,9 @@
 EAPI=4
 
 EGIT_REPO_URI="git://github.com/ysbaddaden/prax.git"
+CONFIG_CHECK="~NF_NAT ~NETFILTER_XT_TARGET_REDIRECT"
 
-inherit git-2 eutils
+inherit git-2 eutils linux-info
 
 DESCRIPTION="Rack proxy server for development"
 HOMEPAGE="http://ysbaddaden.github.io/prax/"
@@ -36,4 +37,14 @@ src_install() {
 	dosym /opt/prax/libexec/prax /usr/bin/prax
 
 	newinitd ${FILESDIR}/prax.initd prax
+}
+
+pkg_postinst() {
+	einfo "Edit /etc/nsswitch.conf and add prax to the hosts line."
+	einfo
+	einfo "    # /etc/nsswitch.conf"
+	einfo "    ..."
+	einfo "    hosts: files dns prax"
+	einfo "    ..."
+	einfo
 }
