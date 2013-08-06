@@ -47,4 +47,5 @@ pkg_postinst() {
 	einfo "    hosts: files dns prax"
 	einfo "    ..."
 	einfo
+	einfo "To configure iptables use /etc/init.d/prax start."
 }
