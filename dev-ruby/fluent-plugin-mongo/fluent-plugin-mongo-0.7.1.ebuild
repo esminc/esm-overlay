@@ -20,4 +20,4 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 
 ruby_add_rdepend "=app-admin/fluentd-0.10*
-	=dev-ruby/mongo-1.6*"
+	=dev-ruby/mongo-1.8*"
