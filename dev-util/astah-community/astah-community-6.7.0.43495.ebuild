@@ -4,7 +4,8 @@
 
 EAPI=3
 
-SRC_URI="${PN}-${PV//./_}.zip"
+MY_PV="${PV%.*}-${PV##*.}"
+SRC_URI="${PN}-${MY_PV//./_}.zip"
 DESCRIPTION="Lightweight UML Editor"
 HOMEPAGE="http://astah.change-vision.com/"
 LICENSE="as-is"
