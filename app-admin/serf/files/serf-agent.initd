@@ -1,0 +1,21 @@
+#!/sbin/runscript
+# Distributed under the terms of the GNU General Public License v2
+
+command="/usr/bin/serf"
+command_args="agent ${options}"
+command_background="true"
+extra_started_commands="reload"
+pidfile="/run/serf/${RC_SVCNAME}.pid"
+start_stop_daemon_args="--stdout /var/log/serf/${RC_SVCNAME}.log --stderr /var/log/serf/${RC_SVCNAME}.log"
+
+depend() {
+  need net
+}
+
+reload() {
+  ebegin "Reloading ${RC_SVCNAME}"
+
+  start-stop-daemon --signal HUP --pidfile $pidfile
+
+  eend $? "Failed to reload ${RC_SVCNAME}"
+}
