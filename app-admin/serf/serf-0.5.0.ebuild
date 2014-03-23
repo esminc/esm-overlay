@@ -25,6 +25,5 @@ src_install() {
 	insinto /etc/logrotate.d
 	newins  ${FILESDIR}/serf.logrotate serf
 
-	dodir /run/serf
-	dodir /var/log/serf
+	keepdir /run/serf /var/log/serf
 }

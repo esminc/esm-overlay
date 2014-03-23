@@ -4,7 +4,7 @@
 
 EAPI=4
 
-USE_RUBY="ruby18 ruby19"
+USE_RUBY="ruby18 ruby19 ruby20"
 RUBY_FAKEGEM_NAME="http_parser.rb"
 
 inherit ruby-fakegem

@@ -4,7 +4,7 @@
 
 EAPI=4
 
-USE_RUBY="ruby19"
+USE_RUBY="ruby19 ruby20"
 
 inherit ruby-fakegem
 
@@ -19,10 +19,20 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
 
-ruby_add_rdepend "=dev-ruby/coolio-1.1*
-	=dev-ruby/http_parser-rb-0.5*
+ruby_add_rdepend ">=dev-ruby/coolio-1.1.1
+	<dev-ruby/coolio-2.0.0
+	!=dev-ruby/coolio-1.2.0
+	>=dev-ruby/http_parser-rb-0.5.1
+	<dev-ruby/http_parser-rb-0.6.0
 	>=dev-ruby/json-1.4.3
-	=dev-ruby/msgpack-0.4*
+	>=dev-ruby/msgpack-0.4.4
+	<dev-ruby/msgpack-0.6.0
+	!=dev-ruby/msgpack-0.5.0
+	!=dev-ruby/msgpack-0.5.1
+	!=dev-ruby/msgpack-0.5.2
+	!=dev-ruby/msgpack-0.5.3
+	>=dev-ruby/sigdump-0.2.2
+	<dev-ruby/sigdump-0.3.0
 	=dev-ruby/yajl-ruby-1*"
 
 pkg_setup() {
