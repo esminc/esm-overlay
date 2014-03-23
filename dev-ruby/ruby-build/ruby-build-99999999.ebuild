@@ -20,6 +20,7 @@ DEPEND=""
 
 src_install() {
 	dobin bin/ruby-build
+	dobin bin/rbenv-uninstall
 
 	insinto /usr/share
 	doins -r share/ruby-build
