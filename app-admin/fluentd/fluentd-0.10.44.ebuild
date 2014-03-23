@@ -6,7 +6,7 @@ EAPI=4
 
 USE_RUBY="ruby19 ruby20"
 
-inherit ruby-fakegem
+inherit user ruby-fakegem
 
 DESCRIPTION="An event collector daemon"
 HOMEPAGE="http://fluentd.org/"
@@ -41,8 +41,8 @@ pkg_setup() {
 }
 
 all_ruby_install() {
-	keepdir /var/{lib,log,run}/fluent
-	fowners fluent:fluent /var/{lib,log,run}/fluent
+	keepdir /run/fluent /var/{lib,log}/fluent
+	fowners fluent:fluent /run/fluent /var/{lib,log}/fluent
 
 	newinitd "${FILESDIR}/${PN}.initd" ${PN} || die
 	newconfd "${FILESDIR}/${PN}.confd" ${PN} || die
