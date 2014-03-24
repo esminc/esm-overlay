@@ -6,7 +6,7 @@ DESCRIPTION="Service orchestration and management tool"
 HOMEPAGE="http://www.serfdom.io/"
 SRC_URI="https://dl.bintray.com/mitchellh/serf/${PV}_linux_amd64.zip"
 
-LICENSE=""
+LICENSE="MPL-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
