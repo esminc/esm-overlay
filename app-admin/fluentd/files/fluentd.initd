@@ -20,6 +20,11 @@ depend() {
 	use net
 }
 
+start_pre() {
+	[ "$(dirname ${FLUENTD_PID})" != "/var/run" ] && checkpath -d -m 0755 -o ${FLUENTD_USER}:${FLUENTD_GROUP} -q $(dirname ${FLUENTD_PID})
+	eend $?
+}
+
 reload() {
 	ebegin "Reloading ${SVCNAME}"
 	start-stop-daemon --signal HUP --pidfile $pidfile
