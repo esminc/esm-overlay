@@ -24,6 +24,4 @@ src_install() {
 	newinitd ${FILESDIR}/serf-agent.initd serf-agent
 	newconfd ${FILESDIR}/serf-agent.confd serf-agent
 	systemd_dounit ${FILESDIR}/serf-agent.service
-
-	keepdir /var/log/serf
 }
