@@ -9,13 +9,17 @@ pidfile="/run/serf/${RC_SVCNAME}.pid"
 start_stop_daemon_args="--stdout /var/log/serf/${RC_SVCNAME}.log --stderr /var/log/serf/${RC_SVCNAME}.log"
 
 depend() {
-  need net
+	need net
+}
+
+start_pre() {
+	checkpath --directory /run/serf
 }
 
 reload() {
-  ebegin "Reloading ${RC_SVCNAME}"
+	ebegin "Reloading ${RC_SVCNAME}"
 
-  start-stop-daemon --signal HUP --pidfile $pidfile
+	start-stop-daemon --signal HUP --pidfile $pidfile
 
-  eend $? "Failed to reload ${RC_SVCNAME}"
+	eend $? "Failed to reload ${RC_SVCNAME}"
 }
