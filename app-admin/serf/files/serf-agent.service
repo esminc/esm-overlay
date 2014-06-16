@@ -1,0 +1,11 @@
+[Unit]
+Description=Service orchestration and management tool
+After=network.target
+
+[Service]
+EnvironmentFile=/etc/conf.d/serf-agent
+ExecStart=/usr/bin/serf agent $options
+ExecReload=/usr/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target

@@ -2,6 +2,8 @@
 
 EAPI=4
 
+inherit systemd
+
 DESCRIPTION="Service orchestration and management tool"
 HOMEPAGE="http://www.serfdom.io/"
 SRC_URI="https://dl.bintray.com/mitchellh/serf/${PV}_linux_amd64.zip"
@@ -21,9 +23,7 @@ src_install() {
 
 	newinitd ${FILESDIR}/serf-agent.initd serf-agent
 	newconfd ${FILESDIR}/serf-agent.confd serf-agent
-
-	insinto /etc/logrotate.d
-	newins  ${FILESDIR}/serf.logrotate serf
+	systemd_dounit ${FILESDIR}/serf-agent.service
 
 	keepdir /var/log/serf
 }

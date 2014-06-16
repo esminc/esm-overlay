@@ -6,7 +6,6 @@ command_args="agent ${options}"
 command_background="true"
 extra_started_commands="reload"
 pidfile="/run/serf/${RC_SVCNAME}.pid"
-start_stop_daemon_args="--stdout /var/log/serf/${RC_SVCNAME}.log --stderr /var/log/serf/${RC_SVCNAME}.log"
 
 depend() {
 	need net
