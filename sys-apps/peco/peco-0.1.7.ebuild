@@ -5,7 +5,7 @@
 EAPI=4
 
 DESCRIPTION="Simplistic interactive filtering tool"
-HOMEPAGE="https://github.com/lestrrat/peco"
+HOMEPAGE="https://github.com/peco/peco"
 SRC_URI="${HOMEPAGE}/archive/v${PV}.tar.gz"
 
 LICENSE="MIT"
@@ -21,9 +21,9 @@ pkg_setup() {
 }
 
 src_prepare() {
-	mkdir -p $WORKDIR/src/github.com/lestrrat
+	mkdir -p $WORKDIR/src/github.com/peco
 
-	ln -s $WORKDIR/$P $WORKDIR/src/github.com/lestrrat/peco
+	ln -s $WORKDIR/$P $WORKDIR/src/github.com/peco/peco
 
 	go get github.com/jessevdk/go-flags
 	go get github.com/mattn/go-runewidth
