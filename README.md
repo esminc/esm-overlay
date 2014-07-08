@@ -20,7 +20,7 @@ ESM's portage overlay. It's useful for especially Ruby/Rails application develop
 2\. Add this overlay.
 
 ```
-# curl https://raw.github.com/esminc/esm-overlay/master/profiles/layman.xml > /etc/layman/overlays/esm-overlay.xml
+# curl https://raw.githubusercontent.com/esminc/esm-overlay/master/profiles/layman.xml > /etc/layman/overlays/esm-overlay.xml
 # layman -f -a esm
 ```
 
