@@ -14,6 +14,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
+RESTRICT="strip"
 
 DEPEND="app-arch/unzip"
 RDEPEND="|| ( www-client/google-chrome www-client/google-chrome-beta www-client/google-chrome-unstable )"
