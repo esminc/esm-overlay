@@ -10,7 +10,7 @@ SRC_URI="https://github.com/sstephenson/rbenv/archive/v${PV}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x64-macos"
 IUSE="deprecated +ruby-build"
 
 DEPEND="ruby-build? ( dev-ruby/ruby-build[rbenv] )"
