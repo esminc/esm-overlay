@@ -1,0 +1,13 @@
+#!/sbin/runscript
+
+start() {
+  ebegin "Starting droned"
+  start-stop-daemon --start --exec /usr/sbin/droned -- --config=/etc/drone/drone.toml
+  eend $?
+}
+
+stop() {
+  ebegin "Starting droned"
+  start-stop-daemon --stop --exec /usr/sbin/droned
+  eend $?
+}
