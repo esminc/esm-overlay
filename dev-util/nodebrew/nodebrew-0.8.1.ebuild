@@ -10,7 +10,7 @@ DESCRIPTION="Node.js version manager"
 HOMEPAGE="https://github.com/hokaccha/nodebrew"
 SRC_URI="${HOMEPAGE}/archive/v${PV}.tar.gz"
 
-LICENSE=""
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="zsh-completion"

@@ -8,7 +8,7 @@ DESCRIPTION="Git extension for versioning large files"
 HOMEPAGE="https://git-lfs.github.com"
 SRC_URI="https://github.com/github/${PN}/releases/download/v${PV}/${PN}-linux-amd64-${PV}.tar.gz"
 
-LICENSE=""
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""

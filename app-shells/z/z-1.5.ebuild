@@ -8,7 +8,7 @@ DESCRIPTION="z is the new j, yo"
 HOMEPAGE="https://github.com/rupa/z"
 SRC_URI="https://github.com/rupa/z/archive/v${PV}.tar.gz"
 
-LICENSE="as-is"
+LICENSE="WTFPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
 
