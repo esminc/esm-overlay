@@ -6,7 +6,7 @@ DESCRIPTION="Client tools for heroku"
 HOMEPAGE="http://heroku.com"
 SRC_URI="http://assets.heroku.com.s3.amazonaws.com/heroku-client/heroku-client.tgz"
 
-LICENSE=""
+LICENSE="no-source-code"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""

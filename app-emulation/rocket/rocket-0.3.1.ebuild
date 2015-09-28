@@ -8,7 +8,7 @@ DESCRIPTION="App Container runtime"
 HOMEPAGE="https://github.com/coreos/rocket"
 SRC_URI="https://github.com/coreos/rocket/releases/download/v0.3.1/rocket-v${PV}.tar.gz"
 
-LICENSE="APL-2.0"
+LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="+aci"
