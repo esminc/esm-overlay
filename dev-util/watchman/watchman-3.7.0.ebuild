@@ -21,5 +21,5 @@ RDEPEND="${DEPEND}"
 src_configure() {
 	./autogen.sh
 
-	autotools-utils_src_configure
+	autotools-utils_src_configure --without-python
 }
