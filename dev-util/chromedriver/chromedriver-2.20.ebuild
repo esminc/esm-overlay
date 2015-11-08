@@ -8,7 +8,7 @@ inherit unpacker
 
 DESCRIPTION="WebDriver for Chrome"
 HOMEPAGE="https://sites.google.com/a/chromium.org/chromedriver"
-SRC_URI="http://chromedriver.storage.googleapis.com/${PV}/${PN}_linux64.zip"
+SRC_URI="http://chromedriver.storage.googleapis.com/${PV}/${PN}_linux64.zip -> ${P}.zip"
 
 LICENSE="BSD"
 SLOT="0"
@@ -22,7 +22,7 @@ RDEPEND="|| ( www-client/google-chrome www-client/google-chrome-beta www-client/
 S=${WORKDIR}
 
 src_unpack() {
-	unpack_zip ${PN}_linux64.zip
+	unpack_zip ${P}.zip
 }
 
 src_install() {
