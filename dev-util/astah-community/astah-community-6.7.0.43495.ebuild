@@ -25,11 +25,11 @@ pkg_nofetch() {
 src_install() {
 	dodir /opt/${PN}
 
-	cd $S
+	cd "${S}"
 
 	dodoc *.txt *.html
 	rm *.txt *.html astah
-	cp -rdp * ${D}/opt/${PN}
+	cp -rdp * "${D}/opt/${PN}"
 	exeinto /opt/${PN}
 
 	echo "#!/bin/sh" > astah

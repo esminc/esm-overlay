@@ -36,5 +36,5 @@ src_install() {
 		doins zsh/*
 	fi
 
-	dodoc ghq.txt LICENSE
+	dodoc ghq.txt
 }

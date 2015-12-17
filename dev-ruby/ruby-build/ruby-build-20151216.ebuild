@@ -27,5 +27,5 @@ src_install() {
 		doexe bin/rbenv-install
 	fi
 
-	dodoc LICENSE README.md
+	dodoc README.md
 }

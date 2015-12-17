@@ -24,7 +24,7 @@ RDEPEND="!www-client/phantomjs"
 S="${WORKDIR}/${A/.tar.bz2/}"
 
 src_unpack() {
-	unpack "${A}" || die
+	unpack ${A} || die
 	cd "${S}" || die
 }
 

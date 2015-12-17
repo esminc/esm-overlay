@@ -20,5 +20,5 @@ S="${WORKDIR}/${A%.tar.gz}"
 
 src_install() {
 	dobin gh-open
-	dodoc README.org LICENSE
+	dodoc README.org
 }

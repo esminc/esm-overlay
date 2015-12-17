@@ -36,7 +36,7 @@ src_install() {
 
 	dosym /opt/prax/libexec/prax /usr/bin/prax
 
-	newinitd ${FILESDIR}/prax.initd prax
+	newinitd "${FILESDIR}/prax.initd prax"
 }
 
 pkg_postinst() {

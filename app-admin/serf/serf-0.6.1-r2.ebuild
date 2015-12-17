@@ -21,7 +21,7 @@ S="${WORKDIR}"
 src_install() {
 	dobin serf
 
-	newinitd ${FILESDIR}/serf-agent.initd serf-agent
-	newconfd ${FILESDIR}/serf-agent.confd serf-agent
-	systemd_dounit ${FILESDIR}/serf-agent.service
+	newinitd "${FILESDIR}/serf-agent.initd" serf-agent
+	newconfd "${FILESDIR}/serf-agent.confd" serf-agent
+	systemd_dounit "${FILESDIR}/serf-agent.service"
 }

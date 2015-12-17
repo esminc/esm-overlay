@@ -19,10 +19,10 @@ RDEPEND="${DEPEND}"
 S="${WORKDIR}/rocket-v${PV}"
 
 src_install() {
-  dobin rkt
+	dobin rkt
 
-  if use aci; then
-    insinto /usr/share/rocket
-    doins *.aci
-  fi
+	if use aci; then
+		insinto /usr/share/rocket
+		doins *.aci
+	fi
 }

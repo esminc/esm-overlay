@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit bash-completion
+inherit bash-completion-r1
 
 DESCRIPTION="Node.js version manager"
 HOMEPAGE="https://github.com/hokaccha/nodebrew"
@@ -21,7 +21,7 @@ RDEPEND="${DEPEND}
 
 src_install() {
 	dobin nodebrew
-	dodoc README.md LICENSE History.md
+	dodoc README.md History.md
 	dobashcompletion completions/bash/nodebrew-completion ${PN}
 
 	if use zsh-completion; then

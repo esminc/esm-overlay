@@ -15,14 +15,14 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_unpack() {
-        unpack ${A}
+	unpack ${A}
 }
 
 S="${WORKDIR}/heroku-client"
 
 src_install() {
 	dodir "/usr/local/heroku"
-	cp -r ${S}/* ${D}/usr/local/heroku
+	cp -r "${S}/*" "${D}/usr/local/heroku"
 	dodir "/usr/local/bin"
 	dosym /usr/local/heroku/bin/heroku /usr/local/bin/heroku
 }
