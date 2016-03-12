@@ -22,11 +22,8 @@ S=${WORKDIR}
 src_install() {
 	insinto /usr
 	doins -r usr/share
-	fperms +x /usr/share/atom/atom
-
 	dobin usr/bin/atom
-
-	fperms +x /usr/share/atom/resources/app/apm/bin/apm
-	fperms +x /usr/share/atom/resources/app/apm/bin/node
 	dosym /usr/share/atom/resources/app/apm/bin/apm /usr/bin/apm
+
+	find . -executable -type f | sed -e 's/^\.//' | xargs fperms +x
 }
