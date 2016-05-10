@@ -6,7 +6,7 @@ EAPI=4
 
 DESCRIPTION="Simplistic interactive filtering tool"
 HOMEPAGE="https://github.com/peco/peco"
-SRC_URI="${HOMEPAGE}/releases/download/v${PV}/peco_linux_amd64.tar.gz"
+SRC_URI="${HOMEPAGE}/releases/download/v${PV}/peco_linux_amd64.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -15,7 +15,7 @@ KEYWORDS="~amd64"
 DEPEND=""
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}/${A%.tar.gz}"
+S="${WORKDIR}/peco_linux_amd64"
 
 src_install() {
 	dobin peco
