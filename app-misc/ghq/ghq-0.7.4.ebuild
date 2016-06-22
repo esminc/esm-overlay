@@ -6,7 +6,7 @@ EAPI=5
 
 DESCRIPTION="Manage remote repository clones"
 HOMEPAGE="https://github.com/motemen/ghq"
-SRC_URI="${HOMEPAGE}/releases/download/v${PV}/ghq_linux_amd64.tar.gz"
+SRC_URI="${HOMEPAGE}/releases/download/v${PV}/ghq_linux_amd64.zip"
 
 LICENSE="MIT"
 SLOT="0"
@@ -16,11 +16,11 @@ IUSE="zsh-completion"
 DEPEND=""
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}/${A%.tar.gz}"
+S="${WORKDIR}"
 
 src_install() {
 	dobin ghq
-	dodoc README.asciidoc
+	dodoc README.txt
 
 	if use zsh-completion; then
 		insinto /usr/share/zsh/site-functions
