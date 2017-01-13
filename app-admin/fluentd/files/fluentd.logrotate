@@ -1,7 +1,0 @@
-/var/log/fluent/*.log {
-	missingok
-	sharedscripts
-	postrotate
-		/etc/init.d/fluentd flush
-	endscript
-}
