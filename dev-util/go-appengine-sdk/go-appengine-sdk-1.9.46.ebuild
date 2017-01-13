@@ -8,7 +8,7 @@ DESCRIPTION="The App Engine SDK for Go"
 HOMEPAGE="https://cloud.google.com/appengine/docs/go/download"
 SRC_URI="https://storage.googleapis.com/appengine-sdks/featured/go_appengine_sdk_linux_amd64-${PV}.zip"
 
-LICENSE="Google"
+LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
