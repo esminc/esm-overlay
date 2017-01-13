@@ -1,30 +1,27 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=4
+EAPI=6
+inherit unpacker
 
 DESCRIPTION="Client tools for heroku"
-HOMEPAGE="http://heroku.com"
-SRC_URI="http://assets.heroku.com.s3.amazonaws.com/heroku-client/heroku-client.tgz"
+HOMEPAGE="https://github.com/heroku/cli"
+SRC_URI="https://cli-assets.heroku.com/branches/stable/heroku-linux-amd64.tar.gz -> ${P}.tar.gz"
 
-LICENSE="no-source-code"
+LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}"
 
-src_unpack() {
-	unpack ${A}
-}
+S="${WORKDIR}"
 
-S="${WORKDIR}/heroku-client"
+RESTRICT="strip"
 
 src_install() {
-	dodir "/usr/local/heroku"
-	cp -r "${S}/*" "${D}/usr/local/heroku"
-	dodir "/usr/local/bin"
-	dosym /usr/local/heroku/bin/heroku /usr/local/bin/heroku
+	exeinto /usr/bin
+	doexe heroku/bin/heroku
 }
 
 pkg_postinst() {
