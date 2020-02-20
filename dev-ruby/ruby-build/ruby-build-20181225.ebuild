@@ -5,8 +5,8 @@
 EAPI=4
 
 DESCRIPTION="Compile and install Ruby"
-HOMEPAGE="https://github.com/sstephenson/ruby-build"
-SRC_URI="https://github.com/sstephenson/ruby-build/archive/v${PV}.tar.gz"
+HOMEPAGE="https://github.com/rbenv/ruby-build"
+SRC_URI="https://github.com/rbenv/ruby-build/archive/v${PV}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

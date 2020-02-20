@@ -4,12 +4,12 @@
 
 EAPI=4
 
-EGIT_REPO_URI="git://github.com/sstephenson/ruby-build.git"
+EGIT_REPO_URI="https://github.com/rbenv/ruby-build.git"
 
-inherit git-2
+inherit git-r3
 
 DESCRIPTION="Compile and install Ruby"
-HOMEPAGE="https://github.com/sstephenson/ruby-build"
+HOMEPAGE="https://github.com/rbenv/ruby-build"
 
 LICENSE="MIT"
 SLOT="0"
